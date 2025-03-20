@@ -4,9 +4,17 @@
   
 }
 
-
-body {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  margin: auto;
+  max-width: 1000px;
+  min-height: 100vh;
+  padding: 10px;
+  
 }
