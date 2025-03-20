@@ -1,9 +1,7 @@
-.container {
-    text-align: center;
-}
 
 .header {
     margin: 50px 0;
+    text-align: center;
    
 }
 .header h1 {
@@ -20,7 +18,9 @@
     border-radius: 5px;
 }
 
+
 .footer h1 {
      color: rgb(48, 74, 123);
      margin-top: 150px;
+     text-align: center;
 }
