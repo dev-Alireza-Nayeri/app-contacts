@@ -1,8 +1,12 @@
 import React from 'react'
+import Layout from '../modules/Layout'
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <Layout>
+    
+    
+    </Layout>
   )
 }
 
