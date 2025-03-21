@@ -1,16 +1,22 @@
 import React from "react";
+import { FaVoicemail } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import ContactItem from "./ContactItem";
 
-function ContactsList({ contacts }) {
-
-
+function ContactsList({ contacts,deleteHandler }) {
   return (
     <div>
       <h3>contacts list</h3>
-      <ul>
-        {contacts.map((contact) => (
-          <li key={contact.id}>{contact.name}</li>
-        ))}
-      </ul>
+      {contacts.length ? (
+        <ul>
+          {contacts.map((contact) => (
+             <ContactItem data={contact} deleteHandler={deleteHandler}  key={contact.id}/>
+          ))}
+        </ul>
+      ) : (
+        <p>no contacts yet </p>
+      )}
     </div>
   );
 }
