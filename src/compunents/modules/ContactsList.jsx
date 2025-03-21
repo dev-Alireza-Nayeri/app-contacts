@@ -3,19 +3,19 @@ import { FaVoicemail } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import ContactItem from "./ContactItem";
-
+import styles from "./ContactList.module.css"
 function ContactsList({ contacts,deleteHandler }) {
   return (
-    <div>
+    <div className={styles.container}>
       <h3>contacts list</h3>
       {contacts.length ? (
-        <ul>
+        <ul className={styles.contacts}>
           {contacts.map((contact) => (
              <ContactItem data={contact} deleteHandler={deleteHandler}  key={contact.id}/>
           ))}
         </ul>
       ) : (
-        <p>no contacts yet </p>
+        <p className={styles.message}>no contacts yet </p>
       )}
     </div>
   );

@@ -1,0 +1,37 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a0d7a0;
+    color: rgb(175, 71, 71);
+    padding: 10px 20px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.item p {
+    flex-basis: 0;
+    flex-grow: 1
+}
+.item span {
+    display: inline-block;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-right: 10px;
+    /* background-color: rgb(81, 186, 186); */
+    /* width: 35px;
+    height: 35px; */
+}
+
+.item button {
+    width: 35px;
+    height: 38px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.1s all ease-in-out;
+}
+.item button:hover{
+    font-size: 1.5rem;
+}
