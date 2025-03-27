@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContactsList from "./ContactsList";
-import styles from "./Contacts.module.css"
+import styles from "./Contacts.module.css";
 import { v4 } from "uuid";
 
 const inputs = [
@@ -18,8 +18,11 @@ function Contacts() {
     email: "",
     phone: "",
   });
-
+  const lsData = JSON.parse(localStorage.getItem("CONTACTS"));
   const [contacts, setContacts] = useState([]);
+  useEffect(() => {
+    setContacts(lsData);
+  }, []);
   const [alert, setAlert] = useState("");
   const chanheHandler = (event) => {
     const name = event.target.name;
@@ -41,6 +44,7 @@ function Contacts() {
 
     const newContact = { ...contact, id: v4() };
     setContacts((contacts) => [...contacts, newContact]);
+    localStorage.setItem("CONTACTS", JSON.stringify([...contacts, newContact]));
 
     setContact({
       name: "",
@@ -53,6 +57,8 @@ function Contacts() {
   const deleteHandler = (id) => {
     const newContacts = contacts.filter((contact) => contact.id !== id);
     setContacts(newContacts);
+    localStorage.setItem("CONTACTS", JSON.stringify(newContacts))
+
   };
 
   return (

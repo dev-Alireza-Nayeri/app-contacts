@@ -5,7 +5,6 @@ import Contacts from '../modules/Contacts'
 function HomePage() {
   return (
     <Layout>
-        
         <Contacts/>
     
     </Layout>

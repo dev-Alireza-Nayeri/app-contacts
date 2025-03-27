@@ -3,15 +3,24 @@ import { FaVoicemail } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import ContactItem from "./ContactItem";
-import styles from "./ContactList.module.css"
-function ContactsList({ contacts,deleteHandler }) {
+import styles from "./ContactList.module.css";
+function ContactsList({ contacts, deleteHandler }) {
+    console.log(contacts);
+    
+  
   return (
     <div className={styles.container}>
       <h3>contacts list</h3>
-      {contacts.length ? (
-        <ul className={styles.contacts}>
-          {contacts.map((contact) => (
-             <ContactItem data={contact} deleteHandler={deleteHandler}  key={contact.id}/>
+      {contacts.length && contacts ? (
+        <ul className={styles.contacts}  >
+          {contacts.map(( contact) => (
+            
+            
+            <ContactItem
+              data={contact}
+              deleteHandler={deleteHandler}
+              key={contact.id}
+            />
           ))}
         </ul>
       ) : (
